@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let totalSubjects = 5;
+        let totalMarks = 0;
+
+
+        for (let i = 1; i <= totalSubjects; i++) {
+            let subjectMarks = parseFloat(prompt(`Enter marks for Subject ${i}:`));
+
+
+            if (isNaN(subjectMarks)) {
+                alert("Please enter valid marks.");
+                break;
+            }
+
+            totalMarks += subjectMarks;
+        }
+
+
+        let percentage = (totalMarks / (totalSubjects * 100)) * 100;
+
+
+        let grade;
+        if (percentage >= 90) {
+            grade = 'A';
+        } else if (percentage >= 80) {
+            grade = 'B';
+        } else if (percentage >= 70) {
+            grade = 'C';
+        } else if (percentage >= 60) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+
+
+        let resultMessage = `Total Marks: ${totalMarks}\nPercentage: ${percentage.toFixed(2)}%\nGrade: ${grade}`;
+        alert(resultMessage);
+    </script>
+
+</body>
+
+</html>
